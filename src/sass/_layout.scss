@@ -1,0 +1,97 @@
+/* Layout specific design */
+.center {
+    margin: 0 auto;
+}
+.flex {
+    display: flex;
+}
+.border-left {
+    border-left: 1px solid color(green);
+
+    @include tablet {
+        border: none;
+    }
+
+    @include mobile {
+        border: none;
+    }
+}
+.container {
+    @extend .center;
+    max-width: $desktop;
+    padding: 1em;
+    border: 10px solid color(green);
+    background-color: color(light);
+    margin-top: 2em;
+}
+header {
+    @extend .flex;
+    justify-content: space-around;
+    align-items: center;
+    @include mobile {
+        flex-direction: column;
+    }
+}
+main {
+    margin-top: 2em;
+    @extend .flex;
+    justify-content: space-around;
+    @include tablet {
+        flex-direction: column;
+    }
+    @include mobile {
+        flex-direction: column;
+    }
+}
+.left {
+    width: 40%;
+    box-sizing: border-box;
+    @include tablet {
+        width: 80%;
+    }
+    @include mobile {
+        width: 100%;
+    }
+}
+.right {
+    width: 60%;
+    box-sizing: border-box;
+    @include tablet {
+        width: 80%;
+    }
+    @include mobile {
+        width: 100%;
+    }
+}
+.info {
+    width: 100px;
+}
+.portfolio {
+    @extend .flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.reference {
+    border: 1px solid color(dark);
+    padding: 1em;
+    width: 350px;
+    background-color: white;
+    margin-top: 2em;
+
+    img {
+        @extend .center-image;
+    }
+}
+.center-image {
+    @extend .center;
+    display: block;
+}
+.center-text {
+    text-align: center;
+}
+.padding-left {
+    padding-left: 1em;
+}
+.break-word {
+    word-break: break-all;
+}
