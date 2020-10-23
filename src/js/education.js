@@ -14,7 +14,7 @@ function getAllCourses() {
         mode: "cors",
         credentials: "same-origin",
         headers: {
-            "Authorization": "Basic " + btoa("micke:micke"),
+            "Authorization": "Basic bWlja2U6bWlja2U=",
           }, 
     })
     .then(resp => resp.json())
