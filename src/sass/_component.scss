@@ -27,10 +27,20 @@
 .tooltip {
   position: relative;
   display: inline-block;
+
+  @include mobile {
+    width: 100%;
+  }
+}
+.tooltip b {
   border-bottom: 1px dotted color(dark);
 }
 .tooltip .tooltiptext {
   visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.tooltiptext {
   width: 400px;
   background-color: color(dark);
   color: color(light);
@@ -39,22 +49,23 @@
   position: absolute;
   z-index: 1;
   bottom: 125%;
-  left: -2em;
-  opacity: 0;
-  transition: opacity 0.3s;
+  left: 0;
+
   @include mobile {
-    width: 300px;
+    width: 100%;
+    left: -1em;
   }
 }
-.tooltip .tooltiptext::after {
-  content: "";
+.tooltiptext:after {
+  content: "\25bc";
   position: absolute;
-  top: 100%;
+  bottom: -0.7em;
   left: 10%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: color(dark) transparent transparent transparent;
+  color: color(dark);
+
+  @include mobile {
+    left: 20%;
+  }
 }
 .tooltip:hover .tooltiptext {
   visibility: visible;
