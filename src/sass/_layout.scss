@@ -23,6 +23,7 @@
     border: 10px solid color(green);
     background-color: color(light);
     margin-top: 2em;
+
 }
 header {
     @extend .flex;
@@ -66,6 +67,9 @@ main {
 .info {
     width: 100px;
 }
+.education, .experience {
+    box-sizing: border-box;
+}
 .portfolio {
     @extend .flex;
     justify-content: space-around;
@@ -91,6 +95,10 @@ main {
 }
 .padding-left {
     padding-left: 1em;
+
+    @include mobile {
+        padding-left: 0;
+    }
 }
 .break-word {
     word-break: break-all;
